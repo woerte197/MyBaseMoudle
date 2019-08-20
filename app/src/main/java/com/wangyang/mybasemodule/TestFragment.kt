@@ -4,11 +4,11 @@ import android.os.Bundle
 import com.wangyang.baselibrary.ui.fragment.BaseMvpFragment
 import org.jetbrains.anko.support.v4.toast
 
-class HomeFragment : BaseMvpFragment<HomePresenter>(), HomeView {
+class TestFragment : BaseMvpFragment<HomePresenter>(), HomeView {
 
 
     override fun setLayout(): Int {
-        return R.layout.test1
+        return R.layout.test
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
