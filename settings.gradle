@@ -1,0 +1,1 @@
+include ':app', ':base_lib', ':annotations', ':compiler', ':webview_lib', ':share_lib', ':pay_lib'
