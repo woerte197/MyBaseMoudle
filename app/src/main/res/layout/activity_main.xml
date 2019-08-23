@@ -21,10 +21,15 @@
     <com.wangyang.baselibrary.view.BottomNavBar
         android:id="@+id/mBottomBar"
         android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:visibility="gone" />
+
+    <com.ashokvarma.bottomnavigation.BottomNavigationBar
+        android:id="@+id/mBottomNavigationBar"
+        android:layout_width="match_parent"
         android:layout_height="50dp" />
 
     <ProgressBar
-        android:visibility="gone"
         android:id="@+id/mProgressBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
@@ -34,7 +39,8 @@
         android:layout_marginRight="@dimen/d16"
         android:layout_marginBottom="100dp"
         android:max="100"
-        android:progress="0" />
+        android:progress="0"
+        android:visibility="gone" />
 
 
 </LinearLayout>

@@ -13,6 +13,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
     buildTypes {
         release {
@@ -26,16 +27,26 @@ android {
     }
 
 }
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation project(':base_lib')
     implementation project(':share_lib')
     implementation project(':webview_lib')
-    kapt 'com.google.dagger:dagger-compiler:2.9'
     implementation project(path: ':pay_lib')
+    implementation project(path: ':router_lib')
+    kapt 'com.google.dagger:dagger-compiler:2.9'
+    kapt 'com.alibaba:arouter-compiler:1.2.2'
+    implementation project(path: ':user_moudle')
+
 }
 repositories {
     mavenCentral()

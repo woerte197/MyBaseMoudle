@@ -13,7 +13,10 @@
             <option value="$PROJECT_DIR$/base_lib" />
             <option value="$PROJECT_DIR$/compiler" />
             <option value="$PROJECT_DIR$/pay_lib" />
+            <option value="$PROJECT_DIR$/router_lib" />
+            <option value="$PROJECT_DIR$/routerlib" />
             <option value="$PROJECT_DIR$/share_lib" />
+            <option value="$PROJECT_DIR$/user_moudle" />
             <option value="$PROJECT_DIR$/webview_lib" />
           </set>
         </option>

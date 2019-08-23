@@ -6,7 +6,8 @@ import android.os.Handler
 import android.os.Looper
 import android.os.Message
 import android.support.v4.app.Fragment
-import com.ashokvarma.bottomnavigation.BottomNavigationBar
+import com.example.router_lib.provider.moudle.main.IMainProvider
+import com.example.router_lib.router.IntentManager
 import com.wangyang.baselibrary.ui.activity.BaseMvpActivity
 import com.wangyang.baselibrary.utils.FragmentManager
 import com.wangyang.baselibrary.utils.PermissionUtil
@@ -133,22 +134,38 @@ open class MainActivity : BaseMvpActivity<MainPresenter>(), MainView {
 //                Log.e(localClassName, platform)
 //            }
 //        })
-        mBottomBar.setTabSelectedListener(object : BottomNavigationBar.OnTabSelectedListener {
-            override fun onTabReselected(position: Int) {
 
-            }
-
-            override fun onTabUnselected(position: Int) {
-            }
-
-            override fun onTabSelected(position: Int) {
-                fragementManager.changeFragment(supportFragmentManager.beginTransaction(), position)
-            }
-        })
-        stack.add(homeFragment)
-        stack.add(testFragment)
-        fragementManager.addFragments(R.id.mFrameLayout,supportFragmentManager.beginTransaction(),stack)
-        fragementManager.changeFragment(supportFragmentManager.beginTransaction(),0)
+//        mBottomNavigationBar.setMode(BottomNavigationBar.MODE_FIXED)
+//                .setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_DEFAULT)
+//                .setActiveColor(R.color.colorPrimary)
+//                .setBarBackgroundColor(R.color.common_white)
+//                .setInActiveColor(R.color.ucrop_color_widget_active)
+//                .setFirstSelectedPosition(0)
+//                .addItem(BottomNavigationItem(R.drawable.icon_back, "返回"))
+//                .addItem(BottomNavigationItem(R.drawable.icon_news, "新闻"))
+//                .initialise()
+//        mBottomBar.setTabSelectedListener(object : BottomNavigationBar.OnTabSelectedListener {
+//            override fun onTabReselected(position: Int) {
+//
+//            }
+//
+//            override fun onTabUnselected(position: Int) {
+//            }
+//
+//            override fun onTabSelected(position: Int) {
+////                fragementManager.changeFragment(supportFragmentManager.beginTransaction(), position)
+//            }
+//        })
+//        stack.add(homeFragment)
+//        stack.add(testFragment)
+//        fragementManager.addFragments(R.id.mFrameLayout, supportFragmentManager.beginTransaction(), stack)
+//        fragementManager.changeFragment(supportFragmentManager.beginTransaction(), 0)
+        IntentManager.INS.init(IMainProvider.MAIN_MAIN_ACTIVITY).withObj("sad", TestJ("wang", "10")).greenChannel().navigation()
+//        ARouter.getInstance().build(IMainProvider.MAIN_MAIN_ACTIVITY).withObject("sad", TestJ("wang", "10")).navigation(null,null)
+//        RouterManager.INS.getMainProvider()!!.isLogin()
+        mFrameLayout.setOnClickListener {
+            mPresenter.jumpLogin()
+        }
     }
 
 

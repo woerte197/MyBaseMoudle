@@ -1,1 +1,1 @@
-include ':app', ':base_lib', ':annotations', ':compiler', ':webview_lib', ':share_lib', ':pay_lib'
+include ':app', ':base_lib', ':annotations', ':compiler', ':webview_lib', ':share_lib', ':pay_lib', ':router_lib', ':routerlib', ':user_moudle'

@@ -4,9 +4,11 @@ import android.content.Context
 import android.os.Handler
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
+import com.example.router_lib.provider.moudle.user.IUserProvider
+import com.example.router_lib.router.IntentManager
 import com.wangyang.baselibrary.presenter.BasePresenter
-import com.wangyang.baselibrary.recycle.adapter.FooterRecycleAdapter
 import com.wangyang.baselibrary.recycle.IEntity
+import com.wangyang.baselibrary.recycle.adapter.FooterRecycleAdapter
 import com.wangyang.baselibrary.recycle.refresh.RefreshHandler
 import javax.inject.Inject
 
@@ -35,5 +37,9 @@ class MainPresenter @Inject constructor() : BasePresenter<MainView>(), RefreshHa
         refreshHandler = RefreshHandler(adapter!!, recyclerView)
         refreshHandler!!.setRefreshListener(this)
         mView.onResult("请求成功")
+    }
+
+    fun jumpLogin() {
+        IntentManager.INS.init(IUserProvider.USER_LOGIN).navigation()
     }
 }

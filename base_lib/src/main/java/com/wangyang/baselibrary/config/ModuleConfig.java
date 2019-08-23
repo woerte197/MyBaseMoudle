@@ -3,8 +3,9 @@ package com.wangyang.baselibrary.config;
 public class ModuleConfig {
     public static final String[] MODULE_LIST=
             {
-              "com.wangyang.pay_lib.PayApplication",
-              "com.wangyang.share_lib.ShareApplication",
-              "com.wangyang.webview_lib.WebViewApplication",
+              "com.example.pay_lib.PayApplication",
+              "com.example.share_lib.ShareApplication",
+              "com.example.webview_lib.WebViewApplication",
+              "com.example.router_lib.RouterApp",
             };
 }

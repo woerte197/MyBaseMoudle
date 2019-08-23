@@ -23,6 +23,7 @@ open class BaseApplication : Application() {
         //初始化配置数据引擎
     }
 
+
     private fun initInjector() {
         appComponent = DaggerAppComponent.builder()
                 .appModule(AppModule(sApplication))
