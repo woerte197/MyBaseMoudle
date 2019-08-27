@@ -1,8 +1,7 @@
-package com.kotlin.base.utils
+package com.wangyang.baselibrary.utils
 
 import android.content.Context
 import android.net.ConnectivityManager
-import android.net.NetworkInfo
 
 /*
     网络工具

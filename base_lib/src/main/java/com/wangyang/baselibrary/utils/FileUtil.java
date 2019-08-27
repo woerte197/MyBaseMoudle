@@ -20,7 +20,6 @@ import android.util.Log;
 import android.webkit.MimeTypeMap;
 import android.widget.TextView;
 
-import com.wangyang.baselibrary.BaseApplication;
 import com.wangyang.baselibrary.config.ConfigManager;
 
 import java.io.BufferedInputStream;
@@ -127,8 +126,7 @@ public final class FileUtil {
 
         //第二步:利用Base64将字节数组输出流中的数据转换成字符串String
         byte[] byteArray = byteArrayOutputStream.toByteArray();
-        String imageString = new String(Base64.encodeToString(byteArray, Base64.DEFAULT));
-        return imageString;
+        return Base64.encodeToString(byteArray, Base64.DEFAULT);
     }
 
     /**
@@ -189,7 +187,7 @@ public final class FileUtil {
             bis = new BufferedInputStream(is);
             fos = new FileOutputStream(file);
             bos = new BufferedOutputStream(fos);
-            byte data[] = new byte[1024 * 4];
+            byte[] data = new byte[1024 * 4];
 
             int count;
             while ((count = bis.read(data)) != -1) {
@@ -233,7 +231,7 @@ public final class FileUtil {
             bis = new BufferedInputStream(is);
             fos = new FileOutputStream(file);
             bos = new BufferedOutputStream(fos);
-            byte data[] = new byte[1024 * 4];
+            byte[] data = new byte[1024 * 4];
             int downsize = 0;
             int count;
             while ((count = bis.read(data)) != -1) {
@@ -245,8 +243,7 @@ public final class FileUtil {
                 NumberFormat numberFormat = NumberFormat.getInstance();
                 // 设置精确到小数点后2位
                 numberFormat.setMaximumFractionDigits(2);
-                String result = numberFormat.format((float) downsize / (float) length * 100);
-                message.obj = result;
+                message.obj = numberFormat.format((float) downsize / (float) length * 100);
                 handler.sendMessage(message);
                 Log.e(TAG, "writeToDisk: " + count);
             }
@@ -288,7 +285,7 @@ public final class FileUtil {
             fos = new FileOutputStream(file);
             bos = new BufferedOutputStream(fos);
 
-            byte data[] = new byte[1024 * 4];
+            byte[] data = new byte[1024 * 4];
 
             int count;
             while ((count = bis.read(data)) != -1) {
@@ -327,7 +324,7 @@ public final class FileUtil {
     private static void refreshDCIM() {
         if (Build.VERSION.SDK_INT >= 19) {
             //兼容android4.4版本，只扫描存放照片的目录
-            MediaScannerConnection.scanFile(BaseApplication.Companion.getAppComponent().appContext(),
+            MediaScannerConnection.scanFile(ConfigManager.Companion.getAppContext(),
                     new String[]{Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).getPath()},
                     null, null);
         } else {

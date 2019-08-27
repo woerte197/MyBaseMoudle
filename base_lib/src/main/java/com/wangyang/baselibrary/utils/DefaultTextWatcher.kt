@@ -1,4 +1,4 @@
-package com.example.baselibrary.utils
+package com.wangyang.baselibrary.utils
 
 import android.text.Editable
 import android.text.TextWatcher

@@ -8,8 +8,8 @@ import android.graphics.Path
 import android.graphics.PorterDuff
 import android.graphics.PorterDuffXfermode
 import android.graphics.RectF
+import android.support.v7.widget.AppCompatImageView
 import android.util.AttributeSet
-import android.widget.ImageView
 import com.wangyang.baselibrary.R
 import org.jetbrains.anko.dimen
 
@@ -17,7 +17,7 @@ import org.jetbrains.anko.dimen
     圆角图标
     左上，右上为圆角
  */
-class RoundRectImageView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr:Int = 0): ImageView(context,attrs,defStyleAttr) {
+class RoundRectImageView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr:Int = 0): AppCompatImageView(context,attrs,defStyleAttr) {
     val radius = dimen(R.dimen.common_radius).toFloat()
     //设置圆角为左上和右上
     private val radiusArray:FloatArray = floatArrayOf(radius,radius,radius,radius,0.0f,0.0f,0.0f,0.0f)

@@ -1,6 +1,6 @@
 package com.example.webview_lib.webview;
 
-import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
@@ -28,14 +28,13 @@ public final class WebActivityImpl extends WebActivity implements IWebViewAvaila
     }
 
     @Override
-    public WebView initWebView(WebView webView) {
+    public WebView initWebView(@NonNull WebView webView) {
         return EcWebViewInit.INSTANCE.initWebView(webView);
     }
 
     @Override
     public WebChromeClient initWebChromeClient() {
-        final WebChromeClient chromeClient = new EcChromeClient();
-        return chromeClient;
+        return new EcChromeClient();
     }
 
     @Override

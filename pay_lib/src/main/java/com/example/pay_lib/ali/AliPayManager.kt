@@ -1,7 +1,6 @@
-package com.wangyang.baselibrary.pay.ali
+package com.example.pay_lib.ali
 
 import android.app.Activity
-import android.widget.Toast
 import com.alipay.sdk.app.PayTask
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread

@@ -1,4 +1,4 @@
-package com.kotlin.message.widgets
+package com.wangyang.baselibrary.view
 
 import android.content.Context
 import android.util.AttributeSet

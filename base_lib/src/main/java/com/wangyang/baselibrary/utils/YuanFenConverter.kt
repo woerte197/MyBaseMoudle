@@ -1,4 +1,4 @@
-package com.kotlin.base.utils
+package com.wangyang.baselibrary.utils
 
 import java.math.BigDecimal
 
@@ -49,24 +49,27 @@ object YuanFenConverter {
             amString = amString.substring(1)
         }
         val result = StringBuffer()
-        if (amString.length == 1) {
-            result.append("0.0").append(amString)
-        } else if (amString.length == 2) {
-            result.append("0.").append(amString)
-        } else {
-            val intString = amString.substring(0, amString.length - 2)
-            for (i in 1..intString.length) {
-                if ((i - 1) % 3 == 0 && i != 1) {
-                    //                    result.append(",");
+        when {
+            amString.length == 1 -> result.append("0.0").append(amString)
+            amString.length == 2 -> result.append("0.").append(amString)
+            else -> {
+                val intString = amString.substring(0, amString.length - 2)
+                for (i in 1..intString.length) {
+                    if ((i - 1) % 3 == 0 && i != 1) {
+                        //                    result.append(",");
+                    }
+                    result.append(intString.substring(intString.length - i, intString.length - i + 1))
                 }
-                result.append(intString.substring(intString.length - i, intString.length - i + 1))
+                result.reverse().append(".").append(amString.substring(amString.length - 2))
             }
-            result.reverse().append(".").append(amString.substring(amString.length - 2))
         }
-        if (flag == 1) {
-            return "-" + result.toString()
-        } else {
-            return result.toString()
+        return when (flag) {
+            1 -> {
+                "-$result.toString()"
+            }
+            else -> {
+                result.toString()
+            }
         }
     }
 
@@ -125,7 +128,7 @@ object YuanFenConverter {
     /*
         分 转换为 元，带单位
      */
-    fun changeF2YWithUnit(amount:Long):String{
-        return "¥${YuanFenConverter.changeF2Y(amount)}"
+    fun changeF2YWithUnit(amount: Long): String {
+        return "¥${changeF2Y(amount)}"
     }
 }

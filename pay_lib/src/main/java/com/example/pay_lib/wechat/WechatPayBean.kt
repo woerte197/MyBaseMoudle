@@ -1,4 +1,4 @@
-package com.wangyang.baselibrary.pay.wechat
+package com.example.pay_lib.wechat
 
 import com.google.gson.annotations.SerializedName
 

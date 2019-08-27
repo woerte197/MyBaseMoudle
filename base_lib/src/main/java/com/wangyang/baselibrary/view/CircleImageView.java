@@ -59,7 +59,7 @@ public class CircleImageView extends AppCompatImageView {
         paint.setAntiAlias(true);
         paint.setFilterBitmap(true);
         paint.setDither(true);
-        canvas.drawBitmap(circleBitmap, width / 2 - length / 2, (height - length) / 2, paint);
+        canvas.drawBitmap(circleBitmap, (width >> 1) - (length >> 1), (height - length) >> 1, paint);
         circleBitmap.recycle();
     }
 

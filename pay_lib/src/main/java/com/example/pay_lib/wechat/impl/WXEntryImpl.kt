@@ -1,7 +1,7 @@
-package com.wangyang.baselibrary.wechat.impl
+package com.example.pay_lib.wechat.impl
 
-import com.wangyang.baselibrary.wechat.base.BaseWXEntryActivity
-import com.wangyang.baselibrary.wechat.base.WechatUtil
+import com.example.pay_lib.wechat.base.BaseWXEntryActivity
+import com.example.pay_lib.wechat.base.WechatUtil
 
 class WXEntryImpl : BaseWXEntryActivity() {
     override fun signSuccess() {

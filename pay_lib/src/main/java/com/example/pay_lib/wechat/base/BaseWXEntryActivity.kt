@@ -1,4 +1,4 @@
-package com.wangyang.baselibrary.wechat.base
+package com.example.pay_lib.wechat.base
 
 import android.annotation.SuppressLint
 import com.tencent.mm.opensdk.modelbase.BaseReq

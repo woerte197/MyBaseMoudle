@@ -1,4 +1,4 @@
-package com.wangyang.mybasemodule
+package com.example.share_lib
 
 import android.content.Context
 import cn.sharesdk.facebook.Facebook
@@ -9,7 +9,6 @@ import cn.sharesdk.onekeyshare.OnekeyShare
 import cn.sharesdk.sina.weibo.SinaWeibo
 import cn.sharesdk.tencent.qq.QQ
 import cn.sharesdk.wechat.friends.Wechat
-import com.example.share_lib.ShareListener
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 import org.json.JSONException

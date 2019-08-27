@@ -1,4 +1,4 @@
-package com.wangyang.baselibrary.wechat.base
+package com.example.pay_lib.wechat.base
 
 import android.content.Intent
 import android.os.Bundle

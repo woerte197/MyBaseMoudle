@@ -7,7 +7,7 @@ import com.google.gson.Gson
 import java.lang.reflect.Type
 @Route(path = "/yourservicegroupname/json")
 class JsonServiceImpl : SerializationService {
-    lateinit var gson: Gson
+    private lateinit var gson: Gson
 
     override fun init(context: Context?) {
         gson = Gson()

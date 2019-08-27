@@ -1,8 +1,6 @@
-package com.wangyang.baselibrary.wechat.`interface`
+package com.example.pay_lib.wechat.`interface`
 
 import com.example.annotations.AppRegisterGenerator
-import com.example.annotations.PayEntryGenerator
-import com.wangyang.baselibrary.wechat.impl.PayWXEntryImpl
 
 @SuppressWarnings("unused")
 @AppRegisterGenerator(packageName = "com.example.wangyang", registerTemplate = AppRegisterEntry::class)

@@ -1,10 +1,8 @@
-package com.kotlin.base.utils
+package com.wangyang.baselibrary.utils
 
 import java.text.ParseException
 import java.text.SimpleDateFormat
-import java.util.Calendar
-import java.util.Date
-import java.util.TimeZone
+import java.util.*
 
 /**
  * 日期工具类 默认使用 "yyyy-MM-dd HH:mm:ss" 格式化日期
@@ -94,7 +92,8 @@ object DateUtil {
      * *
      * @return
      */
-    @JvmOverloads fun format(date: Date?, pattern: String = datePattern): String {
+    @JvmOverloads
+    fun format(date: Date?, pattern: String = datePattern): String {
         var returnValue = ""
         if (date != null) {
             val df = SimpleDateFormat(pattern)
@@ -115,7 +114,8 @@ object DateUtil {
      * *
      * @return
      */
-    @JvmOverloads fun parse(strDate: String, pattern: String = datePattern): Date? {
+    @JvmOverloads
+    fun parse(strDate: String, pattern: String = datePattern): Date? {
         val df = SimpleDateFormat(pattern)
         df.timeZone = defTimeZone
         try {
@@ -204,8 +204,8 @@ object DateUtil {
     @Throws(ParseException::class)
     fun longToString(currentTime: Long, formatType: String): String {
         val date = longToDate(currentTime, formatType) // long类型转成Date类型
-        val strTime = dateToString(date, formatType) // date类型转成String
-        return strTime
+        return dateToString(date, formatType) // date类型转成String
+
     }
 
     // string类型转换为date类型

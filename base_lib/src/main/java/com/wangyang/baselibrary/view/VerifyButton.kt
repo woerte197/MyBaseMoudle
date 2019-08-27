@@ -1,17 +1,17 @@
-package com.kotlin.base.widgets
+package com.wangyang.baselibrary.view
 
 import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Handler
+import android.support.v7.widget.AppCompatButton
 import android.util.AttributeSet
-import android.widget.Button
 import com.wangyang.baselibrary.R
 
 /*
     获取验证码按钮
     带倒计时
  */
-class VerifyButton(mContext: Context, attrs: AttributeSet) : Button(mContext, attrs) {
+class VerifyButton(mContext: Context, attrs: AttributeSet) : AppCompatButton(mContext, attrs) {
     private val mHandler: Handler
     private var mCount = 60
     private var mOnVerifyBtnClick: OnVerifyBtnClick? = null
@@ -35,7 +35,7 @@ class VerifyButton(mContext: Context, attrs: AttributeSet) : Button(mContext, at
     private val countDown = object : Runnable {
         @SuppressLint("ResourceAsColor")
         override fun run() {
-            this@VerifyButton.text = "${mCount} s"
+            this@VerifyButton.text = "$mCount s"
             this@VerifyButton.setBackgroundColor(R.color.common_disable)
             this@VerifyButton.setTextColor(R.color.common_white)
             this@VerifyButton.isEnabled = false

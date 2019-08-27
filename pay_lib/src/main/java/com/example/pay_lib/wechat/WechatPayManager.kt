@@ -1,13 +1,8 @@
-package com.wangyang.baselibrary.pay.wechat
+package com.example.pay_lib.wechat
 
 import com.tencent.mm.opensdk.modelpay.PayReq
-import com.tencent.mm.opensdk.openapi.IWXAPI
-import com.tencent.mm.opensdk.openapi.WXAPIFactory
-import com.wangyang.baselibrary.config.ConfigManager
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
 
-class WechatPayManager() {
+class WechatPayManager {
     companion object {
         val INS: WechatPayManager by lazy { WechatPayManager() }
 

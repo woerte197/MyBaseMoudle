@@ -37,7 +37,7 @@ public  abstract class WebActivity extends BaseActivity {
 
 
     protected void initWebUrl() {
-        mUrl = getIntent().getStringExtra(WebUrlType.INSTANCE.WEB_URL_TYPE);
+        mUrl = getIntent().getStringExtra(WebUrlType.WEB_URL_TYPE);
     }
 
     protected abstract IWebViewAvailable initIWebViewAvailable();

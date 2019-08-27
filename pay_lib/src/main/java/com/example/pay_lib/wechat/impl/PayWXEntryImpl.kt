@@ -1,7 +1,7 @@
-package com.wangyang.baselibrary.wechat.impl
+package com.example.pay_lib.wechat.impl
 
 import com.tencent.mm.opensdk.modelbase.BaseReq
-import com.wangyang.baselibrary.wechat.base.BaseWXPayEntryActivity
+import com.example.pay_lib.wechat.base.BaseWXPayEntryActivity
 
 class PayWXEntryImpl : BaseWXPayEntryActivity() {
     override fun onPaySuccess() {

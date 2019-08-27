@@ -1,5 +1,3 @@
-package com.wangyang.baselibrary.wechat.impl
+package com.example.pay_lib.wechat.impl
 
-class AppRegisterImpl {
-
-}
+class AppRegisterImpl

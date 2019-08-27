@@ -1,7 +1,7 @@
-package com.wangyang.baselibrary.wechat.`interface`
+package com.example.pay_lib.wechat.`interface`
 
 import com.example.annotations.PayEntryGenerator
-import com.wangyang.baselibrary.wechat.impl.PayWXEntryImpl
+import com.example.pay_lib.wechat.impl.PayWXEntryImpl
 
 @SuppressWarnings("unused")
 @PayEntryGenerator(packageName = "com.example.wangyang",payEntryTemplate = PayWXEntryImpl::class )
